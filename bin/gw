@@ -25,7 +25,9 @@ from gitwarrior import Hub
 from gitwarrior import __version__
 from optparse import OptionParser
 from gitwarrior import format_issue
-from ConfigParser import ConfigParser
+# allow for python 3.x support
+# Source: https://stackoverflow.com/a/14087705/7437143
+from configparser import ConfigParser
 
 SHORTCUTS = {
 	'list':     ['list', 'li', 'ls'],

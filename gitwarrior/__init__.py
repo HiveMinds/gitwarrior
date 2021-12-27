@@ -25,7 +25,9 @@ import tempfile
 from subprocess import call
 from operator import attrgetter
 from github2.client import Github
-from ConfigParser import ConfigParser
+# allow for python 3.x support
+# Source: https://stackoverflow.com/a/14087705/7437143
+from configparser import ConfigParser
 
 ISSUE_FILE_CONTENT = """[Issue]
 Title = {title}
@@ -134,7 +136,7 @@ class Hub(object):
 		f.close()
 		call([self.get_editor(), name])
 		f = open(name, 'r')
-		alterations = ConfigParser()
+		alterations = configparser()
 		alterations.readfp(f)
 		f.close()
 		self.gh.issues.edit(id, opt, alterations.get('Issue', 'Title'), alterations.get('Issue', 'Body'))

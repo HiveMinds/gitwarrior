@@ -1,4 +1,39 @@
-USAGE
+## Prequisites
+
+With Conda:
+```
+conda env create --file environment.yml
+conda activate gitwarrior
+```
+Without Conda (in a Python 3.x environment):
+```
+pip install github2
+pip install configparser
+```
+## Installation
+Run:
+```
+python setup.py --help-commands
+python setup.py build
+python setup.py clean
+2to3 -w build/scripts-3.9/gw
+python setup.py install
+python setup.py check
+```
+
+## Uninstallation
+With Conda:
+```
+conda deactivate
+conda env remove -n gitwarrior
+```
+Without Conda:
+```
+Currently Unknown
+```
+## Then convert print statements of python2.X to python 3.x
+
+## USAGE
 gw [ list | li | ls ]  [ all  ]
 		List all shortcut: la
 		List all open issues for a project, or for all projects

@@ -1,0 +1,15 @@
+# run: conda env create --file environment.yml
+# include new packages: conda env update --file environment.yml
+name: gitwarrior
+channels:
+  - conda-forge
+  - conda
+dependencies:
+- anaconda
+- conda:
+  - pytest=6.1.2
+- pip
+- pip:
+  - pyment
+  - github2
+  - configparser
